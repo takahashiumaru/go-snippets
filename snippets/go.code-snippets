@@ -1,0 +1,100 @@
+{
+  "timeNow": {
+    "prefix": "!time",
+    "body": "time.Now()",
+    "description": "time now"
+  },
+
+  "stringTimeNowMonth": {
+    "prefix": "!timeMonth",
+    "body": "time.Now().Format(\"200601\")",
+    "description": "time now month"
+  },
+
+  "stringTimeNowDate": {
+    "prefix": "!timeDay",
+    "body": "time.Now().Format(\"20060102\")",
+    "description": "time now date"
+  },
+
+  "convUintToString": {
+    "prefix": "!convUintToString",
+    "body": "strconv.FormatUint(uint64(?), 10)",
+    "description": "convert uint to string"
+  },
+
+  "convStringToUint": {
+    "prefix": "!convStringToUint",
+    "body": [
+      "uint, err := strconv.ParseUint(?, 10, 32)",
+      "helper.PanicIfError(err)"
+    ],
+    "description": "convert string to uint"
+  },
+
+  "convStringToInt": {
+    "prefix": "!convStringToInt",
+    "body": ["int, err := strconv.Atoi(?)", "helper.PanicIfError(err)"],
+    "description": "convert string to int"
+  },
+
+  "convIntToString": {
+    "prefix": "!convIntToString",
+    "body": "strconv.FormatInt(int64(?), 10)",
+    "description": "convert int to string"
+  },
+
+  "convFloatToString": {
+    "prefix": "!convFloatToString",
+    "body": "strconv.FormatFloat(?, 'f', -1, 64)",
+    "description": "convert float to string"
+  },
+
+  "convStringToFloat": {
+    "prefix": "!convStringToFloat",
+    "body": [
+      "float, err := strconv.ParseFloat(?, 8)",
+      "helper.PanicIfError(err)"
+    ],
+    "description": "convert string to float"
+  },
+
+  "%s": {
+    "prefix": "!fmtSring",
+    "body": "%s",
+    "description": "fmt.Sprintf(\"%d\", \"string\")"
+  },
+
+  "%d": {
+    "prefix": "!fmtUint",
+    "body": "%d",
+    "description": "fmt.Sprintf(\"%d\", uint)"
+  },
+
+  "%g": {
+    "prefix": "!fmtFloat",
+    "body": "%g",
+    "description": "fmt.Sprintf(\"%g\", float)"
+  },
+
+  "filterMapString": {
+    "prefix": "!filterMapString",
+    "body": ["data := map[string]string{", "\"?.eq\": ?", "}"],
+    "description": "filter map"
+  },
+
+  "switch": {
+    "prefix": "!switch",
+    "body": ["switch expression {", "\tcase condition:", "\tdefault:", "}"],
+    "description": "switch case"
+  },
+
+  "constraint": {
+    "prefix": "!constraint",
+    "body": [
+      "if !helper.Contains([]string{?}, ?) {",
+      "err := &exception.ErrorSendToResponse{Err: \"Internal Server Error\"}"
+    ],
+    "description": "cek constraint"
+  }
+}
