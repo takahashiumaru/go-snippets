@@ -1,0 +1,26 @@
+{
+  "name": "go-snippets-simple",
+  "displayName": "Go Simple Snippets",
+  "publisher": "UmarMarufMutaqin",
+  "description": "Ekstensi ini menyediakan koleksi snippet kode untuk bahasa pemrograman Go (Golang) dalam Visual Studio Code.",
+  "version": "0.7.0",
+  "engines": {
+    "vscode": "^1.79.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/takahashiumaru/go-snippets"
+  },
+  "icon": "icon.jpg",
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "go",
+        "path": "./snippets/go.code-snippets"
+      }
+    ]
+  }
+}
