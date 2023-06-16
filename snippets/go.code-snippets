@@ -83,6 +83,18 @@
     "description": "filter map"
   },
 
+  "split": {
+    "prefix": "!spilt",
+    "body": "strings.Split(?, \"?\")",
+    "description": "split"
+  },
+
+  "timeUnix": {
+    "prefix": "!timeUnix",
+    "body": "time.Now().Unix()",
+    "description": "time unix"
+  },
+
   "switch": {
     "prefix": "!switch",
     "body": ["switch expression {", "\tcase condition:", "\tdefault:", "}"],
@@ -95,6 +107,22 @@
       "if !helper.Contains([]string{?}, ?) {",
       "err := &exception.ErrorSendToResponse{Err: \"Internal Server Error\"}"
     ],
-    "description": "cek constraint"
+    "description": "check constraint"
+  },
+
+  "uniqueStrings": {
+    "prefix": "!uniqueStrings",
+    "body": [
+      "  uniqueSubstrings := make(map[string]bool)",
+      "for _, substring := range ? {",
+      "uniqueSubstrings[substring] = true",
+      "}",
+
+      "unique := []string{}",
+      "for k := range uniqueSubstrings {",
+      "unique = append(unique, k)",
+      "}"
+    ],
+    "description": "check if string double this function distict data"
   }
 }

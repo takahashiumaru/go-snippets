@@ -12,7 +12,7 @@ Ekstensi ini menyediakan snippet kode Go (Golang) yang dapat digunakan dalam pro
 
 ## Cara Menggunakan Snippet
 
-![screenshot](https://github.com/takahashiumaru/go-snippets/blob/main/image.png)
+![screenshot](https://raw.githubusercontent.com/takahashiumaru/go-snippets/main/image.png)
 
 1. Pastikan Anda telah menginstal ekstensi ini di VSCode.
 2. Buka file Go yang ingin Anda tambahkan snippet kode.
@@ -23,6 +23,7 @@ Ekstensi ini menyediakan snippet kode Go (Golang) yang dapat digunakan dalam pro
 ## Daftar Snippet yang Tersedia
 
 - `!time`: Memunculkan `time.Now()`
+- `!timeUnix`: Memunculkan `time.Now().Unix()`
 - `!timeMonth`: Menunculkan `time.Now().Format("200601")`
 - `!timeDay`: Menunculkan `time.Now().Format("20060102")`
 - `!convStringToInt`: Menunculkan `int, err := strconv.Atoi(?)`
@@ -40,9 +41,9 @@ Ekstensi ini menyediakan snippet kode Go (Golang) yang dapat digunakan dalam pro
 - `!filterMapString`: Menunculkan `data := map[string]string{`
   `"?.eq": "?string"`
   `}`
-- `!constraint`: Menunculkan `if !helper.Contains([]string{?}, ?) {`
-  `err := &exception.ErrorSendToResponse{Err: "Internal Server Error"}`
-  `}`
+- `!split`: Menunculkan `"strings.Split(?, "?")"`
+
+And others
 
 ## Kontribusi
 
