@@ -1,5 +1,9 @@
 # Ekstensi VSCode untuk Go (Golang)
 
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/UmarMarufMutaqin.go-snippets-simple?logo=visualstudio)](https://marketplace.visualstudio.com/items?itemName=UmarMarufMutaqin.go-snippets-simple)
+[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/UmarMarufMutaqin.go-snippets-simple?logo=visualstudio)](https://marketplace.visualstudio.com/items?itemName=UmarMarufMutaqin.go-snippets-simple)
+[![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/UmarMarufMutaqin.go-snippets-simple?logo=visualstudio)](https://marketplace.visualstudio.com/items?itemName=UmarMarufMutaqin.go-snippets-simple)
+
 Ekstensi ini menyediakan snippet kode Go (Golang) yang dapat digunakan dalam proyek-proyek Go Anda. Snippet adalah potongan kode yang dapat diambil secara otomatis dengan menggunakan kata kunci tertentu.
 
 ## Fitur Utama
@@ -8,7 +12,7 @@ Ekstensi ini menyediakan snippet kode Go (Golang) yang dapat digunakan dalam pro
 
 ## Cara Menggunakan Snippet
 
-[Cara Penggunaan](https://www.youtube.com/watch?v=XTACjMu0EwI)
+![screenshot](https://github.com/takahashiumaru/go-snippets/blob/main/image.png)
 
 1. Pastikan Anda telah menginstal ekstensi ini di VSCode.
 2. Buka file Go yang ingin Anda tambahkan snippet kode.
