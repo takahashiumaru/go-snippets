@@ -2,8 +2,9 @@
   "name": "go-snippets-simple",
   "displayName": "Go Simple Snippets",
   "publisher": "UmarMarufMutaqin",
-  "description": "Ekstensi ini menyediakan koleksi snippet kode untuk bahasa pemrograman Go (Golang) dalam Visual Studio Code.",
-  "version": "0.7.0",
+  "description": "This extension provides a collection of code snippets for the Go (Golang) programming language in Visual Studio Code.",
+  "version": "0.9.3",
+  "pricing": "Free",
   "engines": {
     "vscode": "^1.79.0"
   },
