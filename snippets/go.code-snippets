@@ -5,14 +5,14 @@
     "description": "time now"
   },
 
-  "stringTimeNowMonth": {
-    "prefix": "!timeMonth",
+  "timeNowMonthString": {
+    "prefix": "!timeMonthString",
     "body": "time.Now().Format(\"200601\")",
     "description": "time now month"
   },
 
-  "stringTimeNowDate": {
-    "prefix": "!timeDay",
+  "timeNowDateString": {
+    "prefix": "!timeDateString",
     "body": "time.Now().Format(\"20060102\")",
     "description": "time now date"
   },
@@ -27,14 +27,21 @@
     "prefix": "!convStringToUint",
     "body": [
       "uint, err := strconv.ParseUint(?, 10, 32)",
-      "helper.PanicIfError(err)"
+      "if err != nil {",
+      "panic(err)",
+      "}"
     ],
     "description": "convert string to uint"
   },
 
   "convStringToInt": {
     "prefix": "!convStringToInt",
-    "body": ["int, err := strconv.Atoi(?)", "helper.PanicIfError(err)"],
+    "body": [
+      "int, err := strconv.Atoi(?)",
+      "if err != nil {",
+      "panic(err)",
+      "}"
+    ],
     "description": "convert string to int"
   },
 
@@ -54,7 +61,9 @@
     "prefix": "!convStringToFloat",
     "body": [
       "float, err := strconv.ParseFloat(?, 8)",
-      "helper.PanicIfError(err)"
+      "if err != nil {",
+      "panic(err)",
+      "}"
     ],
     "description": "convert string to float"
   },
@@ -124,5 +133,81 @@
       "}"
     ],
     "description": "check if string double this function distict data"
+  },
+
+  "processData": {
+    "prefix": "!processData",
+    "body": [
+      "temporaryDatas := []?{}",
+      "data := ?",
+      "for temporaryData := range data {",
+      "temporaryDatas = append(temporaryDatas, temporaryData)",
+      "}"
+    ],
+    "description": "check if string double this function distict data"
+  },
+
+  "findAll": {
+    "prefix": "!findAll",
+    "body": [
+      "? := ?struct?",
+      "tx := db.Model(?struct?).Limit(500)",
+
+      "err := tx.Find(&?).Error",
+      "if err != nil {",
+      "panic(err)",
+      "}"
+    ],
+    "description": "query gorm find all data"
+  },
+
+  "findByID": {
+    "prefix": "!findByID",
+    "body": [
+      "var ? ?struct?",
+      "err := db.First(?, ?).Error",
+      "if err != nil {",
+      "panic(err)",
+      "}"
+    ],
+    "description": "query gorm find by ID"
+  },
+
+  "create": {
+    "prefix": "!create",
+    "body": [
+      "err := db.Create(?struct?).First(?).Error",
+      "if err != nil {",
+      "panic(err)",
+      "}"
+    ],
+    "description": "query gorm create"
+  },
+
+  "update": {
+    "prefix": "!update",
+    "body": [
+      "? := ?struct?",
+
+      "err := db.Where(?).Updates(?,id).Error",
+      "if err != nil {",
+      "panic(err)",
+      "}"
+    ],
+    "description": "query gorm update"
+  },
+
+  "delete": {
+    "prefix": "!delete",
+    "body": [
+      "? := ?struct?",
+      "tx := db.First(?, id).Updates(?)",
+
+      "err = tx.Unscoped().Delete(?, id).Error",
+      "if err != nil {",
+      "panic(err)",
+      "}"
+    ],
+    "description": "query gorm delete"
   }
 }
